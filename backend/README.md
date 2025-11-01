@@ -13,7 +13,7 @@
 cd backend
 ```
 
-### 2. (Khuyến nghị) Tạo virtual environment
+### 2. (Khuyến nghị) Tạo virtual environment (hoặc sài acoda ....)
 ```bash
 python3 -m venv venv
 source venv/bin/activate  # Trên Linux/macOS
