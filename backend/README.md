@@ -69,5 +69,10 @@ Vào phần setting
 
 Vào phần API Key dùng cho CLOUDINARY_API_KEY và CLOUDINARY_API_SECRET
 
+### TEST API 
+```bash
+curl -X POST "http://127.0.0.1:8000/auth/register" -H "Content-Type: application/json" -d '{"username":"khai123","password":"123123123"}'
 
+curl -X POST "http://127.0.0.1:8000/auth/login" -H "Content-Type: application/json" -d '{"username":"khai123","password":"123123123"}'
+```
 
