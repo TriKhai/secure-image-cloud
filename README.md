@@ -3,7 +3,8 @@
 ## Member List
 
 1. Mai Hà Ngọc Hải - B220xxx - haib220xxxx@student.ctu.edu.vn
-1. Lý Trí Khải - B2207530 - khaib2207530@student.ctu.edu.vn
+2. Trầm Tri Min - B220xxx - haib220xxxx@student.ctu.edu.vn
+3. Lý Trí Khải - B2207530 - khaib2207530@student.ctu.edu.vn
 
 ## Technologies Used:
 
