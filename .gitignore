@@ -1,0 +1,23 @@
+# ===== Backend (FastAPI / Python) =====
+be/__pycache__/
+be/*.py[cod]
+be/venv/
+be/.env
+be/*.sqlite3
+be/tmp/
+be/.mypy_cache/
+be/.pytest_cache/
+be/.vscode/
+
+# ===== Frontend (React / Node) =====
+fe/node_modules/
+fe/dist/
+fe/build/
+fe/.env
+fe/.vite/
+fe/.cache/
+fe/.vscode/
+
+# ===== Các file chung / hệ thống =====
+*.log
+*.DS_Store
