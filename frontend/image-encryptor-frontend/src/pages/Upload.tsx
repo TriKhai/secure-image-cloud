@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import Navbar from "../component/Navbar";
+import Footer from "../component/Footer";
 
 export default function Upload() {
   const [selectedFile, setSelectedFile] = useState<File | null>(null);
