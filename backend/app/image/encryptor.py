@@ -99,7 +99,7 @@ def encrypt_image(image_path, aes_key, henon_params):
     side = math.ceil(math.sqrt(len(combined)))
     padded = combined.ljust(side * side, b"\x00")
     encrypted_img = Image.frombytes("L", (side, side), padded)
-
+    
     # Lưu ảnh kết quả
     buffer = BytesIO()
     encrypted_img.save(buffer, format="PNG")
