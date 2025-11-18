@@ -8,6 +8,26 @@ cloudinary.config(
     api_secret=CLOUDINARY_API_SECRET
 )
 
-def upload_to_cloud(file):
+def upload_to_cloud(file: bytes) -> dict:
+    """
+    Upload file lên Cloudinary.
+    Trả về dict chứa url và public_id.
+    """
     result = cloudinary.uploader.upload(file)
-    return result["secure_url"]
+    return {
+        "url": result["secure_url"],
+        "public_id": result["public_id"],
+    }
+
+
+def delete_from_cloud(public_id: str):
+    """
+    Xoá ảnh trên Cloudinary theo public_id.
+    """
+    try:
+        res = cloudinary.uploader.destroy(public_id)
+        print("Cloudinary destroy:", res)
+        return res
+    except Exception as e:
+        print("LỖI XOÁ CLOUDINARY:", e)
+        return None

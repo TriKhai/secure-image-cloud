@@ -40,8 +40,8 @@ export default function Register() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-sm">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white border border-gray-400 rounded-xl p-8 w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Đăng ký tài khoản
         </h2>
@@ -111,14 +111,14 @@ export default function Register() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white rounded-lg py-2 hover:bg-blue-700 transition disabled:opacity-50"
+                className="w-full bg-gray-600 text-white rounded-lg py-2 hover:bg-black transition disabled:opacity-50"
               >
                 {isSubmitting ? "Đang đăng ký..." : "Đăng ký"}
               </button>
 
               <p className="text-center text-gray-600 mt-4">
                 Đã có tài khoản?{" "}
-                <Link to="/login" className="text-blue-600 hover:underline">
+                <Link to="/login" className="text-black hover:underline">
                   Đăng nhập
                 </Link>
               </p>

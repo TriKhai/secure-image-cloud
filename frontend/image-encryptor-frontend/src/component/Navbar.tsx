@@ -18,12 +18,12 @@ export default function Navbar() {
   const isActive = (path: string) => location.pathname === path;
 
   return (
-    <nav className="bg-white shadow-md">
+    <nav className="bg-white text-black shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
         {/* Logo */}
         <Link
           to="/"
-          className="text-xl font-bold text-blue-600 hover:text-blue-700"
+          className="text-xl font-bold text-gray-600 hover:text-black"
         >
           SecureImageCloud
         </Link>
@@ -33,37 +33,37 @@ export default function Navbar() {
           <Link
             to="/"
             className={`${
-              isActive("/") ? "text-blue-600 font-semibold" : "text-gray-700"
-            } hover:text-blue-600 transition`}
+              isActive("/") ? "text-black font-semibold" : "text-gray-700"
+            } hover:text-black transition`}
           >
             Trang chủ
           </Link>
-          <Link
+          {/* <Link
             to="/about"
             className={`${
-              isActive("/about") ? "text-blue-600 font-semibold" : "text-gray-700"
-            } hover:text-blue-600 transition`}
+              isActive("/about") ? "text-black font-semibold" : "text-gray-700"
+            } hover:text-black transition`}
           >
             Giới thiệu
-          </Link>
+          </Link> */}
           <Link
             to="/upload"
             className={`${
-              isActive("/upload") ? "text-blue-600 font-semibold" : "text-gray-700"
-            } hover:text-blue-600 transition`}
+              isActive("/upload") ? "text-black font-semibold" : "text-gray-700"
+            } hover:text-black transition`}
           >
             Images
           </Link>
-          <Link
+          {/* <Link
             to="/contact"
             className={`${
               isActive("/contact")
-                ? "text-blue-600 font-semibold"
+                ? "text-black font-semibold"
                 : "text-gray-700"
-            } hover:text-blue-600 transition`}
+            } hover:text-black transition`}
           >
             Liên hệ
-          </Link>
+          </Link> */}
 
           {isLoggedIn ? (
             <>
@@ -81,9 +81,9 @@ export default function Navbar() {
                 to="/login"
                 className={`${
                   isActive("/login")
-                    ? "bg-blue-700 text-white"
-                    : "bg-blue-600 text-white"
-                } px-4 py-2 rounded-lg hover:bg-blue-700 transition`}
+                    ? "bg-gray-700 text-white"
+                    : "bg-gray-600 text-white"
+                } px-4 py-2 rounded-lg hover:bg-black transition`}
               >
                 Đăng nhập
               </Link>
@@ -91,9 +91,9 @@ export default function Navbar() {
                 to="/register"
                 className={`${
                   isActive("/register")
-                    ? "bg-blue-600 text-white"
-                    : "border border-blue-600 text-blue-600"
-                } px-4 py-2 rounded-lg hover:bg-blue-600 hover:text-white transition`}
+                    ? "bg-gray-600 text-white"
+                    : "border border-gray-600 text-black"
+                } px-4 py-2 rounded-lg hover:bg-black hover:text-white transition`}
               >
                 Đăng ký
               </Link>

@@ -6,7 +6,7 @@
 
 ---
 
-## Cách chạy backend Flask
+## Cách chạy backend FASTAPI
 
 ### 1. Vào thư mục backend
 ```bash
@@ -26,12 +26,12 @@ source venv/bin/activate  # Trên Linux/macOS
 pip install -r requirements.txt
 ```
 
-### 4. Chạy ứng dụng Flask
+### 4. Chạy ứng dụng FASTAPI
 ```bash
 uvicorn app.main:app --reload
 ```
 
-Mặc định Flask chạy tại địa chỉ 
+Mặc định FASTAPI chạy tại địa chỉ 
 ```bash
 http://127.0.0.1:8000/
 ```

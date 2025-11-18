@@ -9,27 +9,55 @@ import base64
 from io import BytesIO
 
 # TẠO KHÓA BẰNG BẢN ĐỒ HENON
+# def generate_henon_key(x0, y0, a, b, length):
+#     """
+#     Sinh khóa nhị phân (bytes) độ dài 'length' bằng bản đồ hỗn loạn Henon.
+#     Mỗi vòng lặp sinh ra 2 byte từ giá trị x, y.
+#     """
+#     key = bytearray()
+#     x, y = x0, y0
+
+#     while len(key) < length:
+#         # Cập nhật giá trị hỗn loạn
+#         x_new = y + 1 - a * (x * x)
+#         y_new = b * x
+#         x, y = x_new, y_new
+
+#         # Chuyển thành byte 0–255
+#         val_x = int(abs(x) * 1e6) % 256
+#         val_y = int(abs(y) * 1e6) % 256
+
+#         key.append(val_x)
+#         if len(key) < length:
+#             key.append(val_y)
+
+#     return bytes(key)
 def generate_henon_key(x0, y0, a, b, length):
     """
     Sinh khóa nhị phân (bytes) độ dài 'length' bằng bản đồ hỗn loạn Henon.
-    Mỗi vòng lặp sinh ra 2 byte từ giá trị x, y.
+    Chuẩn hóa theo công thức min-max về 0-255.
     """
-    key = bytearray()
     x, y = x0, y0
+    xs, ys = [], []
 
-    while len(key) < length:
-        # Cập nhật giá trị hỗn loạn
+    # Sinh giá trị Henon trước
+    for _ in range(int(length/2)):
         x_new = y + 1 - a * (x * x)
         y_new = b * x
         x, y = x_new, y_new
+        xs.append(x)
+        ys.append(y)
 
-        # Chuyển thành byte 0–255
-        val_x = int(abs(x) * 1e6) % 256
-        val_y = int(abs(y) * 1e6) % 256
+    min_x, max_x = min(xs), max(xs)
+    min_y, max_y = min(ys), max(ys)
 
+    key = bytearray()
+    for xi, yi in zip(xs, ys):
+        # Chuẩn hóa theo min-max và chuyển về 0–255
+        val_x = int((xi - min_x) / (max_x - min_x) * 255)
+        val_y = int((yi - min_y) / (max_y - min_y) * 255)
         key.append(val_x)
-        if len(key) < length:
-            key.append(val_y)
+        key.append(val_y)
 
     return bytes(key)
 

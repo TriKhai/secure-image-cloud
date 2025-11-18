@@ -1,7 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useAuthStore } from "../store/authStore";
 
 export default function Login() {
@@ -27,8 +27,8 @@ export default function Login() {
   };
 
   return (
-    <div className="flex items-center justify-center min-h-screen bg-gray-50">
-      <div className="bg-white shadow-lg rounded-xl p-8 w-full max-w-sm">
+    <div className="flex items-center justify-center min-h-screen bg-gray-100">
+      <div className="bg-white border border-gray-400 rounded-xl p-8 w-full max-w-sm">
         <h2 className="text-2xl font-bold mb-6 text-center text-gray-800">
           Đăng nhập
         </h2>
@@ -71,10 +71,16 @@ export default function Login() {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white rounded-lg py-2 hover:bg-blue-700 transition disabled:opacity-50"
+                className="w-full bg-gray-500 text-white rounded-lg py-2 hover:bg-black transition disabled:opacity-50"
               >
                 {isSubmitting ? "Đang đăng nhập..." : "Đăng nhập"}
               </button>
+              <p className="text-center text-gray-600 mt-4">
+                Tạo tài khoản?{" "}
+                <Link to="/register" className="text-black hover:underline">
+                  Đăng ký
+                </Link>
+              </p>
             </Form>
           )}
         </Formik>
