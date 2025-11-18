@@ -193,7 +193,7 @@ export default function Upload() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col bg-gray-50">
+    <div className="min-h-screen flex flex-col bg-gray-100">
       {loading && <LoadingSpinner />}
 
       <Navbar />
