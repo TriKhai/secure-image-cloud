@@ -20,7 +20,6 @@ export default function Navbar() {
   return (
     <nav className="bg-white text-black shadow-md">
       <div className="container mx-auto px-4 py-3 flex justify-between items-center">
-        {/* Logo */}
         <Link
           to="/"
           className="text-xl font-bold text-gray-600 hover:text-black"

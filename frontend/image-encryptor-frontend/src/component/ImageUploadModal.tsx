@@ -1,12 +1,11 @@
-// src/component/ImageUploadModal.tsx
 import { useState } from "react";
 import axios from "axios";
 import LoadingSpinner from "./LoadingSpinner";
 
 type Props = {
   token: string | null;
-  uploadUrl?: string;                // mặc định dùng API của bạn
-  onUploaded?: () => void | Promise<void>; // callback sau khi upload xong để parent reload list
+  uploadUrl?: string;               
+  onUploaded?: () => void | Promise<void>;
 };
 
 export default function ImageUploadModal({
@@ -85,7 +84,6 @@ export default function ImageUploadModal({
 
   return (
     <>
-      {/* Nút mở modal */}
       <button
         onClick={open}
         className="w-full py-2 rounded-lg text-white bg-gray-600 hover:bg-black"
