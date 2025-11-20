@@ -19,4 +19,5 @@ class ImageResponse(BaseModel):
     filename: str
 
     class Config:
-        orm_mode = True
+        from_attributes = True
+        # orm_mode = True

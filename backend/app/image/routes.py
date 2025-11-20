@@ -24,8 +24,19 @@ async def upload_image(
         # 1. Đọc bytes -> ảnh gốc
         image_bytes = await file.read()
 
+        aes_key_bytes = bytes.fromhex(current_user.aes_key)
+
+        henon_params = {
+            "x0": current_user.henon_x0,
+            "y0": current_user.henon_y0,
+            "a": current_user.henon_a,
+            "b": current_user.henon_b,
+        }
+
+
         # 2. Mã hoá -> base64
-        encrypted_base64 = encrypt_image(image_bytes, AES_KEY, HENON_PARAMS)
+        # encrypted_base64 = encrypt_image(image_bytes, AES_KEY, HENON_PARAMS)
+        encrypted_base64 = encrypt_image(image_bytes, aes_key_bytes, henon_params)
 
         # 3. base64 -> bytes để upload
         encrypted_bytes = base64.b64decode(encrypted_base64)
@@ -93,7 +104,18 @@ def get_all_images(
             continue
 
         img_bytes = io.BytesIO(response.content)
-        base64_img = decrypt_image(img_bytes, AES_KEY, HENON_PARAMS)
+
+        aes_key_bytes = bytes.fromhex(current_user.aes_key)
+
+        henon_params = {
+            "x0": current_user.henon_x0,
+            "y0": current_user.henon_y0,
+            "a": current_user.henon_a,
+            "b": current_user.henon_b,
+        }
+
+        # base64_img = decrypt_image(img_bytes, AES_KEY, HENON_PARAMS)
+        base64_img = decrypt_image(img_bytes, aes_key_bytes, henon_params)
 
         results.append({
             "id": img.id,
