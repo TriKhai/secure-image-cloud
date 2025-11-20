@@ -21,6 +21,6 @@
 
 \*Gợi ý tính năng:
 
-- Upload file ảnh lên cloudenarycloudenary
+- Upload file ảnh lên cloudenary
 - Mã hoá ảnh trước khi lưu bằng AES algorithm + Henon map
 - Giải mã khi hiển thị
