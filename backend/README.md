@@ -46,12 +46,12 @@ CLOUDINARY_CLOUD_NAME=
 CLOUDINARY_API_KEY=
 CLOUDINARY_API_SECRET=
 
-AES_KEY = abcabcbcabcabcaa
+# Bỏ qua đã update bản mới ngon hơn
 # AES_KEY = my-secret-key-16
-HENON_X0=0
-HENON_Y0=0
-HENON_A=1.4
-HENON_B=0.3User
+# HENON_X0=0
+# HENON_Y0=0
+# HENON_A=1.4
+# HENON_B=0.3
 ```
 
 ### Lấy key cho Cloudinary
@@ -71,8 +71,8 @@ Vào phần API Key dùng cho CLOUDINARY_API_KEY và CLOUDINARY_API_SECRET
 
 ### TEST API 
 ```bash
-curl -X POST "http://127.0.0.1:8000/auth/register" -H "Content-Type: application/json" -d '{"username":"khai123","password":"123123123"}'
+curl -X POST "http://127.0.0.1:8000/auth/register" -H "Content-Type: application/json" -d '{"username":"trimin_ngochai_trikhai","password":"12345678"}'
 
-curl -X POST "http://127.0.0.1:8000/auth/login" -H "Content-Type: application/json" -d '{"username":"khai123","password":"123123123"}'
+curl -X POST "http://127.0.0.1:8000/auth/login" -H "Content-Type: application/json" -d '{"username":"trimin_ngochai_trikhai","password":"12345678"}'
 ```
 
