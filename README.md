@@ -8,7 +8,7 @@
 
 ## Technologies Used:
 
-- Flask
+- FastApi
 - SQLite
 - React
 - Cloudinary (lưu dữ liệu ảnh)
