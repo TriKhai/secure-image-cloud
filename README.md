@@ -16,8 +16,8 @@
 
 ## Task: SECURE IMAGE CLOUD
 
-1. User (id, username, password)
-2. Images (id, user_id, url, filename)
+1. User (id, username, password, aes_key, henon_x0, henon_y0, henon_a, henon_b)
+2. Images (id, user_id, url, filename, cloud_id)
 
 \*Gợi ý tính năng:
 
